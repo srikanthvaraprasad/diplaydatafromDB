@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    string[] TableHeader = new string[]
+    {
+      "ID " ,
+      " Name"
+    };
+}
+
+<div class="table">
+    <table class=" table table-boarder table-hover">
+        <thead>
+            <tr>
+                
+                    @{
+                        foreach(var head in TableHeader)
+                        {
+                            <th>@head
+                            </th>
+                        }
+                    }
+                
+            </tr>
+        </thead>
+        <tbody>
+        @{
+            if(Model != null)
+            {
+                foreach (var Data in Model)
+                {
+                    <tr>
+                    <td>@Data.ID</td>
+                    <td>@Data.Name</td>
+                    </tr>
+                    
+                }
+            }
+        }
+        </tbody>
+    </table>
+
+</div>
